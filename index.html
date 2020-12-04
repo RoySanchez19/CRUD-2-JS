@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Vinculando Favicon -->
+    <link rel="icon" href="ico/australia.ico">
+
+    <!-- Titulo de la Pagina -->
+    <title>PAISES CRUD</title>
+
+    <!-- Bootswatch CDN Interno Yeti -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+
+    <!-- Vinculando Estilos de CSS -->
+    <link rel="stylesheet" href="CSS/estilos.css" class="rel">
+
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class = "navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand mx-auto" href="#">Aplicación de Países</a>
+    </nav>
+    <!-- Contenedor -->
+    <div class="container">
+        <!-- Aplicación -->
+        <div class="row pt-5">
+            <!-- Formulario -->
+            <div class="col-md-5">
+                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                    <form action="javascript:void(0);" method="POST" onsubmit="app.Add()" class="card-body">
+                        <div class="form-group">
+                            <input type="text" id="add-name" placeholder="Nuevo País" class="form-control color">
+                        </div>
+                
+                        <div class="form-group">
+                            <input type="submit" value="Agregar" class="btn btn-success">
+                        </div>
+                    </form>
+                
+                    <div id="spoiler" role="aria-hidden">
+                        <form action="javascript:void(0);" method="POST" id="saveEdit">
+                            <input type="text" id="edit-name" class="color">
+                            <input type="submit" value="Editar" class="btn btn-warning"> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+                        </form>
+                    </div>
+                    <p id="counter"></p>
+                    <table>
+                        <tr>
+                            <th colspan="3">Nombres de los Países</th>
+                        </tr>
+                        <tbody id="countries"></tbody>
+                    </table>
+                </div>
+            </div>
+            <img src="img/australia.png">     
+        </div>
+    </div>
+
+    <script src="JS/App.js"></script>
+</body>
+</html>
